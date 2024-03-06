@@ -34,7 +34,7 @@
 
   a::after {
     content: '';
-    background-color: black;
+    background-color: $active_link;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -45,11 +45,11 @@
 
   a:hover,
   a.active {
-    color: black;
+    color: $active_link;
   }
 
   a:hover::after {
-    background-color: black;
+    background-color: $active_link;
     width: 100%;
   }
 }
