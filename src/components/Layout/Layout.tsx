@@ -1,19 +1,21 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import NavigationLink from 'types/navigationLink';
+import Header from './Header/Header';
 
 export default function Layout() {
+  const pages: NavigationLink[] = [
+    {
+      text: 'Characters',
+      link: '/characters'
+    },
+    {
+      text: 'Comics',
+      link: '/comics'
+    }
+  ];
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/characters">Characters</NavLink>
-          </li>
-          <li>
-            <NavLink to="/comics">Comics</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <hr />
+      <Header buttons={pages} />
       <Outlet />
     </>
   );

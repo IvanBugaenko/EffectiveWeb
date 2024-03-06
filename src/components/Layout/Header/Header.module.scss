@@ -1,0 +1,55 @@
+@import '../../../variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: $header_background;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.logo {
+  height: 1.6rem;
+}
+
+.nav_list {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+
+  a {
+    text-decoration: none;
+    font-style: normal;
+    line-height: normal;
+    font-size: 1.2rem;
+    color: $navigation_link;
+    font-weight: bold;
+    position: relative;
+    outline: none !important;
+    transition: 0.5s;
+  }
+
+  a::after {
+    content: '';
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    transition: 0.5s;
+  }
+
+  a:hover,
+  a.active {
+    color: black;
+  }
+
+  a:hover::after {
+    background-color: black;
+    width: 100%;
+  }
+}
