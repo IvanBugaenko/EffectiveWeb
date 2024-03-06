@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import NavigationLink from 'types/navigationLink';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 export default function Layout() {
   const pages: NavigationLink[] = [
@@ -16,7 +17,10 @@ export default function Layout() {
   return (
     <>
       <Header buttons={pages} />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 }

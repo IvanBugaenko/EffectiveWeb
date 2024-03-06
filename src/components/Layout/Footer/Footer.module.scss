@@ -1,0 +1,23 @@
+@import '../../../variables.scss';
+
+.footer {
+  background-color: $footer_background;
+  padding-top: 1.3rem;
+  padding-bottom: 0.5rem;
+  padding-left: $footer_padding_left;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - $footer_padding_left);
+}
+
+.logo {
+  height: 2.4rem;
+}
+
+.text {
+  color: $footer_text;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-decoration: none;
+}
