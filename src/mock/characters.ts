@@ -61,7 +61,7 @@ export const characters: LinkCard[] = [
     id: 5,
     name: 'Черная Вдова',
     image_url:
-      'https://i.pinimg.com/originals/e7/cf/e9/e7cfe91a7e72d996b38fa2d6ddede4cb.jpg',
+      'https://w.forfun.com/fetch/34/34534d233a6cbd43a8fc18996777b28c.jpeg',
     description:
       'Черная Вдова, настоящее имя Наташа Романофф — супергероиня и шпионка, обладающая уникальными боевыми навыками и способностями. Она была членом различных команд, включая Мстителей, и часто выполняла секретные миссии по всему миру. Наташа Романофф была создана писателем Стэном Ли и художником Доном Рико, и впервые появилась в выпуске Tales of Suspense #52 (апрель 1964).',
     linked_card: {
@@ -102,7 +102,7 @@ export const characters: LinkCard[] = [
     id: 8,
     name: 'Капитан Америка',
     image_url:
-      'https://i.pinimg.com/originals/e0/1f/be/e01fbe30f473f5e8d77c044352518f9d.jpg',
+      'https://a-static.besthdwallpaper.com/captain-america-marvel-wallpaper-3840x2160-24358_54.jpg',
     description:
       'Капитан Америка, настоящее имя Стивен Роджерс — суперсолдат и символ Америки, обладающий выдающимися физическими способностями и боевыми навыками. Он является одним из основателей Мстителей и часто выступает в роли их лидера. Стивен Роджерс был создан писателем Джо Саймон и художником Джеком Кирби, и впервые появился в выпуске Captain America Comics #1 (март 1941).',
     linked_card: {
@@ -115,7 +115,7 @@ export const characters: LinkCard[] = [
     id: 9,
     name: 'Чёрная Пантера',
     image_url:
-      'https://i.pinimg.com/originals/1f/02/a4/1f02a4bb7f7cd287ad5c86e73793110d.jpg',
+      'https://img.razrisyika.ru/kart/140/559629-chernaya-pantera-marvel-6.jpg',
     description:
       'Чёрная Пантера, настоящее имя ТЧалла — супергерой-мутант, король вымышленной африканской страны Ваканды. Он является членом Людей Икс и одним из самых ярких персонажей вселенной Marvel. Первое появление Чёрной Пантеры в комиксах относится к 1966 году.',
     linked_card: {
