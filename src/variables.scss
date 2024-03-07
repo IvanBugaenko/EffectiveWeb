@@ -1,7 +1,7 @@
 // Цвета, которые используются на экранах
 
 // header
-$header_background: #d11834;
+$header_background: #ed1a3b;
 $navigation_link: #f5c236;
 $active_link: black;
 
@@ -10,14 +10,25 @@ $background: white;
 $button_background: #efad4d;
 $button_text: white;
 
+// search
+$search_theme: #dadada;
+
+// link card page
 $header_text: #333333;
 $info_text: #7d7d7d;
-$description_text: black;
-$placeholder_text: #dadada;
-$link_text: #9fb1cb;
+
+// link card
+$card_header: #ed1a3b;
+$description_text: #7d7d7d;
+
+// details
+$details_link_text: #9fb1cb;
 
 // footer
 $footer_background: #555555;
 $footer_text: white;
 
 $footer_padding_left: 0.8rem;
+
+// grid
+$num_columns: 6;
