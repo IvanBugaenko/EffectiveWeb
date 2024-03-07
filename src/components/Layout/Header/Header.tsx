@@ -23,7 +23,7 @@ export default function Header(props: { buttons: NavigationLink[] }) {
         className={classes.logo}
         alt="marvel_logo"
       />
-      <nav>
+      <nav className={classes.navigation}>
         <ul className={classes.nav_list}>{getNavMenu(props.buttons)}</ul>
       </nav>
     </header>

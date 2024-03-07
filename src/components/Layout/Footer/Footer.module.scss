@@ -5,9 +5,9 @@
   padding-top: 1.3rem;
   padding-bottom: 0.5rem;
   padding-left: $footer_padding_left;
-  position: absolute;
   bottom: 0;
   width: calc(100% - $footer_padding_left);
+  margin-top: 3rem;
 }
 
 .logo {
