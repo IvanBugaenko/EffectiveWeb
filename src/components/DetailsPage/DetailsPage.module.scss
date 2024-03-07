@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+.wall_image {
+  width: 100%;
+  height: 37rem;
+
+  object-fit: cover;
+  object-position: 60% 40%;
+}
+
+.info_container {
+  margin-top: 1rem;
+  padding: 0 2rem;
+
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  grid-gap: 25rem;
+}
+
+.header {
+  color: $details_header_text;
+  margin-bottom: 1rem;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.description {
+  color: $details_description_text;
+  font-size: 1.4rem;
+}
+
+.link_info {
+  a {
+    text-decoration: none;
+  }
+}
+
+.links {
+  list-style-type: none;
+}
+
+.link {
+  a {
+    color: $details_link_text;
+    font-size: 1.4rem;
+  }
+
+  a:hover {
+    transition: 0.5s;
+    color: darken($color: $card_header, $amount: 20);
+  }
+}
