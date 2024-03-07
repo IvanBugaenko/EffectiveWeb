@@ -5,6 +5,7 @@ import Layout from 'components/Layout/Layout';
 import RouteObject from 'react-router-dom';
 import NoMatch from 'components/NoMatch/NoMatch';
 import DetailsPage from 'components/DetailsPage/DetailsPage';
+import AppStrings from 'res/strings';
 
 const routes: RouteObject.RouteObject[] = [
   {
@@ -13,7 +14,13 @@ const routes: RouteObject.RouteObject[] = [
     children: [
       {
         path: 'characters',
-        element: <LinkCardsPage link_cards={characters} />
+        element: (
+          <LinkCardsPage
+            header={AppStrings.characters_link}
+            placeholder={AppStrings.characters_search_placeholder}
+            link_cards={characters}
+          />
+        )
       },
       {
         path: 'characters/:id',
@@ -21,7 +28,13 @@ const routes: RouteObject.RouteObject[] = [
       },
       {
         path: 'comics',
-        element: <LinkCardsPage link_cards={comics} />
+        element: (
+          <LinkCardsPage
+            header={AppStrings.comics_link}
+            placeholder={AppStrings.comics_search_placeholder}
+            link_cards={comics}
+          />
+        )
       },
       {
         path: 'comics/:id',
