@@ -1,0 +1,25 @@
+@import '../../../../variables.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  height: 2.3rem;
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+
+  background-color: $button_background;
+  color: $button_text;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  transition: 0.5s;
+  background-color: darken($color: $button_background, $amount: 20);
+}

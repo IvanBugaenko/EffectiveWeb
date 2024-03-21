@@ -1,0 +1,58 @@
+@import '../../../variables.scss';
+
+.link_card {
+  height: 20rem;
+  border: 1px solid black;
+}
+
+.image {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.text_container {
+  padding: 1rem;
+}
+
+.name {
+  color: $card_header;
+  font-size: 1.125rem;
+  line-height: normal;
+  font-style: normal;
+}
+
+.description_text {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  color: $description_text;
+}
+
+.link_card:hover {
+  animation: 5s ease-in-out 0s normal none infinite running animation;
+
+  .name {
+    transition: 0.5s;
+    color: darken($color: $card_header, $amount: 20);
+  }
+}
+@keyframes animation {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(-1deg);
+  }
+  20%,
+  40% {
+    transform: rotate(1deg);
+  }
+}

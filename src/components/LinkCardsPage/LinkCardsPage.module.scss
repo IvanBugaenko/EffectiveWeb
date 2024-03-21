@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.link_cards_container {
+  margin-top: 5rem;
+  padding: 0 2rem;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category {
+  color: $header_text;
+}
+
+.num {
+  padding-top: 1rem;
+  color: $info_text;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid $search_theme;
+  margin: 2rem 0;
+}
+
+.link_cards {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat($num_columns, 1fr);
+  gap: 1.5rem;
+}
