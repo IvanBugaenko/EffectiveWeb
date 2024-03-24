@@ -1,0 +1,34 @@
+@import '../../../variables.scss';
+
+.pagination_container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 20rem;
+  padding: 0 35rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.arrow_button {
+  color: $inactive_color;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+
+  background-color: $background;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.arrow_button:hover {
+  transition: 0.25s;
+  color: darken($active_background_color, 10);
+}
