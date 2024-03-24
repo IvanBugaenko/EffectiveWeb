@@ -23,7 +23,7 @@ async function getCharactersList(
 
 async function getCharacterById(id: number): Promise<Character> {
   const response = await axios.get(`/characters/${id}`);
-  const characterData = response.data.results;
+  const characterData = response.data.data.results;
   return characterData[0];
 }
 

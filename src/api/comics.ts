@@ -23,7 +23,7 @@ async function getComicsList(
 
 async function getComicsById(id: number): Promise<Comics> {
   const response = await axios.get(`/comics/${id}`);
-  const characterData = response.data.results;
+  const characterData = response.data.data.results;
   return characterData[0];
 }
 
