@@ -14,7 +14,9 @@ export default function LinkCardsPage(props: {
   total_page_number: number;
   pagination_len: number;
   pagination_controller: (new_page_number: number) => void;
+  search_controller: (search_params: string) => void;
 }) {
+  console.log(props.total_page_number);
   const func = (link_card: LinkCard) => {
     return <LinkCardExemplar link_card={link_card}></LinkCardExemplar>;
   };
@@ -24,7 +26,10 @@ export default function LinkCardsPage(props: {
         <h1>{props.header}</h1>
         <p className={classes.num}>({props.total_cards})</p>
       </div>
-      <Search placeholder={props.placeholder} onClick={() => {}} />
+      <Search
+        placeholder={props.placeholder}
+        search_controller={props.search_controller}
+      />
       <hr className={classes.divider} />
       <div className={classes.link_cards}>
         {props.link_cards.map((card) => func(card))}

@@ -10,13 +10,15 @@ function ComicsPage(props: { limit: number; pagination_len: number }) {
   const { comicsDataContainer, loading } = comicsDataContainerStore;
   const [currentPage, setCurrentPage] = useState(1);
 
+  const [nameStartsWith, setNameStartsWith] = useState('');
+
   useEffect(() => {
     comicsDataContainerStore.getComicsList(
       props.limit,
-      props.limit * (currentPage - 1)
-      //! debounce
+      props.limit * (currentPage - 1),
+      nameStartsWith === '' ? null : nameStartsWith
     );
-  }, [currentPage]);
+  }, [currentPage, nameStartsWith]);
 
   const comicsList: LinkCard[] = comicsDataContainer.results.map(
     (comics: Comics) => ({
@@ -40,6 +42,7 @@ function ComicsPage(props: { limit: number; pagination_len: number }) {
       }
       pagination_len={props.pagination_len}
       pagination_controller={setCurrentPage}
+      search_controller={setNameStartsWith}
     />
   );
 }

@@ -36,7 +36,7 @@ export default function Pagination(props: {
 
   if (props.current_page_number <= delta) {
     leftArrayBound = 1;
-    rightArrayBound = 1 + 2 * delta;
+    rightArrayBound = Math.min(1 + 2 * delta, props.total_page_number);
   } else {
     if (props.total_page_number - delta <= props.current_page_number) {
       leftArrayBound = props.total_page_number - 2 * delta;

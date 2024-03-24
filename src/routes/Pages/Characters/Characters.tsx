@@ -10,13 +10,15 @@ function CharactersPage(props: { limit: number; pagination_len: number }) {
   const { characterDataContainer, loading } = characterDataContainerStore;
   const [currentPage, setCurrentPage] = useState(1);
 
+  const [nameStartsWith, setNameStartsWith] = useState('');
+
   useEffect(() => {
     characterDataContainerStore.getCharactersList(
       props.limit,
-      props.limit * (currentPage - 1)
-      //! debounce
+      props.limit * (currentPage - 1),
+      nameStartsWith === '' ? null : nameStartsWith
     );
-  }, [currentPage]);
+  }, [currentPage, nameStartsWith]);
 
   const characterList: LinkCard[] = characterDataContainer.results.map(
     (character: Character) => ({
@@ -42,6 +44,7 @@ function CharactersPage(props: { limit: number; pagination_len: number }) {
       }
       pagination_len={props.pagination_len}
       pagination_controller={setCurrentPage}
+      search_controller={setNameStartsWith}
     />
   );
 }
