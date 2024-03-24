@@ -1,0 +1,26 @@
+@import '../../../../variables.scss';
+
+.value {
+  color: $inactive_color;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+
+  background-color: $background;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.value:hover {
+  transition: 0.25s;
+  background-color: $active_background_color;
+  color: $active_color;
+}
+
+.active_value {
+  background-color: $active_background_color;
+  color: $active_color;
+}

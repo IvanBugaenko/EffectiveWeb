@@ -1,20 +1,13 @@
-import getObjectById from 'mock/getObjectById';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classes from './DetailsPage.module.scss';
 import NavigationLink from 'types/navigationLink';
-import AppStrings from 'res/strings';
+import { LinkCard } from 'types/linkCard';
 
-export default function DetailsPage() {
-  const locParams = useLocation().pathname.split('/');
-  const category = locParams[1];
-  const id = Number(locParams[2]);
-  const info = getObjectById(id, category)!;
-
-  const categoryLink: string =
-    category === AppStrings.characters_link.toLowerCase()
-      ? AppStrings.comics_link
-      : AppStrings.characters_link;
-
+export default function DetailsPage(props: {
+  card: LinkCard;
+  linkedCards: NavigationLink[];
+  categoryLink: string;
+}) {
   const getLinks = (nav_links: NavigationLink[]) => {
     return nav_links.map((nav_link) => (
       <li className={classes.link}>
@@ -27,17 +20,17 @@ export default function DetailsPage() {
     <section className={classes.details_page}>
       <img
         className={classes.wall_image}
-        src={info.image_url}
+        src={props.card.image_url}
         alt="card_image"
       />
       <div className={classes.info_container}>
         <div className={classes.text_info}>
-          <h1 className={classes.header}>{info.name}</h1>
-          <p className={classes.description}>{info.description}</p>
+          <h1 className={classes.header}>{props.card.name}</h1>
+          <p className={classes.description}>{props.card.description}</p>
         </div>
         <div className={classes.link_info}>
-          <h1 className={classes.header}>{categoryLink}</h1>
-          <ul className={classes.links}>{getLinks(info.linked_cards)}</ul>
+          <h1 className={classes.header}>{props.categoryLink}</h1>
+          <ul className={classes.links}>{getLinks(props.linkedCards)}</ul>
         </div>
       </div>
     </section>

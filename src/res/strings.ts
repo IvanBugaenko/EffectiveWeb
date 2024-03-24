@@ -5,7 +5,8 @@ const AppStrings: { [id: string]: string } = {
   characters_search_placeholder: 'Search for Characters by Name',
   comics_header: 'Comics',
   comics_search_placeholder: 'Search for Comics by Name',
-  search_button_text: 'SEARCH'
+  search_button_text: 'SEARCH',
+  default_description: 'No description'
 };
 
 export default AppStrings;

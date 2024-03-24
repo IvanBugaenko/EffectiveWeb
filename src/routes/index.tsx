@@ -1,11 +1,15 @@
-import LinkCardsPage from 'components/LinkCardsPage/LinkCardsPage';
-import { characters } from '../mock/characters';
-import { comics } from '../mock/comics';
-import Layout from 'components/Layout/Layout';
+import Layout from 'routes/Pages/Layout/Layout';
 import RouteObject from 'react-router-dom';
-import NoMatch from 'components/NoMatch/NoMatch';
-import DetailsPage from 'components/DetailsPage/DetailsPage';
-import AppStrings from 'res/strings';
+import NoMatch from 'routes/Pages/NoMatch/NoMatch';
+import {
+  CharactersPage,
+  ComicsPage,
+  CharacterDetailsPage,
+  ComicsDetailsPage
+} from './Pages';
+
+const limit: number = 12;
+const paginationLen: number = 7;
 
 const routes: RouteObject.RouteObject[] = [
   {
@@ -14,31 +18,19 @@ const routes: RouteObject.RouteObject[] = [
     children: [
       {
         path: 'characters',
-        element: (
-          <LinkCardsPage
-            header={AppStrings.characters_link}
-            placeholder={AppStrings.characters_search_placeholder}
-            link_cards={characters}
-          />
-        )
+        element: <CharactersPage limit={limit} pagination_len={paginationLen} />
       },
       {
         path: 'characters/:id',
-        element: <DetailsPage />
+        element: <CharacterDetailsPage />
       },
       {
         path: 'comics',
-        element: (
-          <LinkCardsPage
-            header={AppStrings.comics_link}
-            placeholder={AppStrings.comics_search_placeholder}
-            link_cards={comics}
-          />
-        )
+        element: <ComicsPage limit={limit} pagination_len={paginationLen} />
       },
       {
         path: 'comics/:id',
-        element: <DetailsPage />
+        element: <ComicsDetailsPage />
       },
       {
         path: '*',
