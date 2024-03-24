@@ -1,6 +1,6 @@
-import Layout from 'components/Layout/Layout';
+import Layout from 'routes/Pages/Layout/Layout';
 import RouteObject from 'react-router-dom';
-import NoMatch from 'components/NoMatch/NoMatch';
+import NoMatch from 'routes/Pages/NoMatch/NoMatch';
 import {
   CharactersPage,
   ComicsPage,

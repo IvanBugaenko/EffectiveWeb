@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import NavigationLink from 'types/navigationLink';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
-import classes from './Layout.module.scss';
+import Header from '../../../components/Header/Header';
+import Footer from '../../../components/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 export default function Layout() {
   const pages: NavigationLink[] = [
@@ -18,7 +18,8 @@ export default function Layout() {
   return (
     <>
       <Header buttons={pages} />
-      <main className={classes.main_part}>
+      <main>
+        <ToastContainer />
         <Outlet />
       </main>
       <Footer />

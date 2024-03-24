@@ -7,7 +7,7 @@ import { comicsDataContainerStore } from 'stores';
 import { LinkCard } from 'types/linkCard';
 
 function ComicsPage(props: { limit: number; pagination_len: number }) {
-  const { comicsDataContainer, loading } = comicsDataContainerStore;
+  const { comicsDataContainer } = comicsDataContainerStore;
   const [currentPage, setCurrentPage] = useState(1);
 
   const [nameStartsWith, setNameStartsWith] = useState('');
@@ -33,9 +33,9 @@ function ComicsPage(props: { limit: number; pagination_len: number }) {
     <LinkCardsPage
       header={AppStrings.comics_link}
       total_cards={comicsDataContainer.total}
-      placeholder={AppStrings.characters_search_placeholder}
+      placeholder={AppStrings.comics_search_placeholder}
       link_cards={comicsList}
-      loading={loading}
+      loading={comicsDataContainerStore.loading}
       current_page_number={currentPage}
       total_page_number={
         Math.floor(comicsDataContainer.total / props.limit) + 1

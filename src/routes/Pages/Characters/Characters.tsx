@@ -7,7 +7,7 @@ import { characterDataContainerStore } from 'stores';
 import { LinkCard } from 'types/linkCard';
 
 function CharactersPage(props: { limit: number; pagination_len: number }) {
-  const { characterDataContainer, loading } = characterDataContainerStore;
+  const { characterDataContainer } = characterDataContainerStore;
   const [currentPage, setCurrentPage] = useState(1);
 
   const [nameStartsWith, setNameStartsWith] = useState('');
@@ -27,10 +27,7 @@ function CharactersPage(props: { limit: number; pagination_len: number }) {
       image_url: [character.thumbnail.path, character.thumbnail.extension].join(
         '.'
       ),
-      description:
-        character.description.length == 0
-          ? AppStrings.default_description
-          : character.description
+      description: character.description
     })
   );
 
@@ -40,7 +37,7 @@ function CharactersPage(props: { limit: number; pagination_len: number }) {
       total_cards={characterDataContainer.total}
       placeholder={AppStrings.characters_search_placeholder}
       link_cards={characterList}
-      loading={loading}
+      loading={characterDataContainerStore.loading}
       current_page_number={currentPage}
       total_page_number={
         Math.floor(characterDataContainer.total / props.limit) + 1

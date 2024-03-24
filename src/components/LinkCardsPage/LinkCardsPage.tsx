@@ -17,10 +17,6 @@ export default function LinkCardsPage(props: {
   pagination_controller: (new_page_number: number) => void;
   search_controller: (search_params: string) => void;
 }) {
-  console.log(props.total_page_number);
-  const func = (link_card: LinkCard) => {
-    return <LinkCardExemplar link_card={link_card}></LinkCardExemplar>;
-  };
   return (
     <section className={classes.link_cards_container}>
       <div className={classes.header}>
@@ -37,17 +33,21 @@ export default function LinkCardsPage(props: {
           <Loading />
         </div>
       ) : (
-        <div className={classes.link_cards}>
-          {props.link_cards.map((card) => func(card))}
+        <div>
+          <div className={classes.link_cards}>
+            {props.link_cards.map((card) => (
+              <LinkCardExemplar link_card={card}></LinkCardExemplar>
+            ))}
+          </div>
+          <hr className={classes.divider} />
+          <Pagination
+            current_page_number={props.current_page_number}
+            total_page_number={props.total_page_number}
+            pagination_len={props.pagination_len}
+            pagination_controller={props.pagination_controller}
+          />
         </div>
       )}
-      <hr className={classes.divider} />
-      <Pagination
-        current_page_number={props.current_page_number}
-        total_page_number={props.total_page_number}
-        pagination_len={props.pagination_len}
-        pagination_controller={props.pagination_controller}
-      />
     </section>
   );
 }
