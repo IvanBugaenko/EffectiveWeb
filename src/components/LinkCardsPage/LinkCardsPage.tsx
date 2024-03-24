@@ -3,6 +3,7 @@ import Search from './Search/Search';
 import classes from './LinkCardsPage.module.scss';
 import LinkCardExemplar from './LinkCardExemplar/LinkCardExemplar';
 import Pagination from './Pagination/Pagination';
+import Loading from 'components/Loading/Loading.module';
 
 export default function LinkCardsPage(props: {
   header: string;
@@ -31,9 +32,15 @@ export default function LinkCardsPage(props: {
         search_controller={props.search_controller}
       />
       <hr className={classes.divider} />
-      <div className={classes.link_cards}>
-        {props.link_cards.map((card) => func(card))}
-      </div>
+      {props.loading ? (
+        <div className={classes.loading}>
+          <Loading />
+        </div>
+      ) : (
+        <div className={classes.link_cards}>
+          {props.link_cards.map((card) => func(card))}
+        </div>
+      )}
       <hr className={classes.divider} />
       <Pagination
         current_page_number={props.current_page_number}

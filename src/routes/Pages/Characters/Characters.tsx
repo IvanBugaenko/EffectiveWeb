@@ -27,7 +27,10 @@ function CharactersPage(props: { limit: number; pagination_len: number }) {
       image_url: [character.thumbnail.path, character.thumbnail.extension].join(
         '.'
       ),
-      description: character.description
+      description:
+        character.description.length == 0
+          ? AppStrings.default_description
+          : character.description
     })
   );
 
