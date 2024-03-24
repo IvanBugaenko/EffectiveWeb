@@ -27,7 +27,7 @@ async function getCharacterById(id: number): Promise<Character> {
   return characterData[0];
 }
 
-async function getCharacterComics(id: string): Promise<ComicsDataContainer> {
+async function getCharacterComics(id: number): Promise<ComicsDataContainer> {
   const response = await axios.get(`characters/${id}/comics`);
   const characterComicsData = response.data.data;
   return characterComicsData;
