@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: space-between;
   min-width: 20rem;
-  padding: 0 35rem;
 }
 
 .buttons {
@@ -15,7 +14,7 @@
 }
 
 .arrow_button {
-  color: $inactive_color;
+  color: $active_arrow_color;
   padding: 0.5rem;
   font-size: 1.25rem;
   font-style: normal;
@@ -28,7 +27,12 @@
   cursor: pointer;
 }
 
-.arrow_button:hover {
+.inactive_button {
+  cursor: auto;
+  color: $inactive_arrow_color;
+}
+
+.arrow_button_active:hover {
   transition: 0.25s;
   color: darken($active_background_color, 10);
 }

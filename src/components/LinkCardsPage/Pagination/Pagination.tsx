@@ -64,7 +64,9 @@ export default function Pagination(props: {
         <button
           className={clsx(
             classes.arrow_button,
-            1 === props.current_page_number && classes.inactive_button
+            1 === props.current_page_number
+              ? classes.inactive_button
+              : classes.arrow_button_active
           )}
           onClick={setLeftBoundPage}
         >
@@ -73,20 +75,25 @@ export default function Pagination(props: {
         <button
           className={clsx(
             classes.arrow_button,
-            1 === props.current_page_number && classes.inactive_button
+            1 === props.current_page_number
+              ? classes.inactive_button
+              : classes.arrow_button_active
           )}
           onClick={setLeftPage}
         >
           {'<'}
         </button>
       </div>
-      <div>{pageArray.map((value: number) => getPaginationButton(value))}</div>
+      <div className={classes.page_buttons}>
+        {pageArray.map((value: number) => getPaginationButton(value))}
+      </div>
       <div className={classes.buttons}>
         <button
           className={clsx(
             classes.arrow_button,
-            props.total_page_number === props.current_page_number &&
-              classes.inactive_button
+            props.total_page_number === props.current_page_number
+              ? classes.inactive_button
+              : classes.arrow_button_active
           )}
           onClick={setRightPage}
         >
@@ -95,8 +102,9 @@ export default function Pagination(props: {
         <button
           className={clsx(
             classes.arrow_button,
-            props.total_page_number === props.current_page_number &&
-              classes.inactive_button
+            props.total_page_number === props.current_page_number
+              ? classes.inactive_button
+              : classes.arrow_button_active
           )}
           onClick={setRightBoundPage}
         >
